@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campus Route Lab</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="network.js"></script><script defer src="routing.js"></script><script defer src="app.js"></script>
+</head><body>
+<main>
+<header><p class="wordmark">Campus Route Lab</p><p class="folio">Walking network / Fictional campus</p></header>
+<h1>Which way to the lab?</h1>
+<p class="intro">Compare the quickest walk with the route that visits the fewest places.</p>
+<section class="controls" aria-label="Route settings">
+<label>From <select id="from"></select></label><label>To <select id="to"></select></label>
+<label>Find <select id="mode"><option value="time">Fastest walk</option><option value="hops">Fewest paths</option></select></label>
+<label class="check"><input type="checkbox" id="step-free"> Avoid stairs</label>
+</section>
+<div class="layout"><figure>
+<svg id="map" viewBox="0 0 655 425" role="img" aria-labelledby="map-title map-desc">
+<title id="map-title">Campus walking network</title><desc id="map-desc">The route and distance are also listed beside the map. Numbers on paths are walking times in minutes.</desc>
+<defs><pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#c6d1c1"/></pattern></defs>
+<rect width="655" height="425" fill="url(#grid)"/>
+<g id="edges"></g><g id="nodes"></g></svg>
+<figcaption><span><i class="line green"></i>Selected walk</span><span><i class="line stairs"></i>Stairs</span><span>Edge labels in minutes</span></figcaption>
+</figure>
+<section class="summary" aria-live="polite" aria-atomic="true">
+<p class="algorithm" id="algorithm"></p><h2 id="duration"></h2><p id="count"></p>
+<ol id="stops"></ol><p id="comparison"></p>
+</section></div>
+<details><summary>How did the search reach this result?</summary>
+<p id="explanation"></p><p id="visits"></p></details>
+</main></body></html>

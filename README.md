@@ -13,7 +13,7 @@ I am a B.Tech Artificial Intelligence and Data Science student exploring program
 - Web development
 - Artificial Intelligence experiments
 - Data Science exploration
-- Projects and mini-projects
+- [Projects and mini-projects](Projects/README.md)
 - Notes and learning resources
 
 ## My Approach
